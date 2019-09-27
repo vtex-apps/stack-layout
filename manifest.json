@@ -1,0 +1,20 @@
+{
+  "vendor": "vtex",
+  "name": "stack-layout",
+  "version": "0.0.1",
+  "title": "VTEX flex layout component",
+  "defaultLocale": "pt-BR",
+  "description": "VTEX flex layout component",
+  "builders": {
+    "react": "3.x",
+    "store": "0.x",
+    "messages": "1.x",
+    "docs": "0.x"
+  },
+  "mustUpdateAt": "2020-04-02",
+  "categories": [],
+  "scripts": {
+    "postreleasy": "vtex publish --verbose"
+  },
+  "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
+}
