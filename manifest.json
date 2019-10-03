@@ -2,9 +2,9 @@
   "vendor": "vtex",
   "name": "stack-layout",
   "version": "0.0.1",
-  "title": "VTEX flex layout component",
+  "title": "VTEX stack layout component",
   "defaultLocale": "pt-BR",
-  "description": "VTEX flex layout component",
+  "description": "VTEX stack layout component",
   "builders": {
     "react": "3.x",
     "store": "0.x",

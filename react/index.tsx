@@ -1,12 +1,13 @@
-import React, { FC, Fragment } from 'react'
+import React, { Fragment } from 'react'
 import { generateBlockClass, BlockClass } from '@vtex/css-handles'
+import { defineMessages } from 'react-intl'
 import styles from './styles.css'
 
 interface Props {
   zIndexOffset?: number
 }
 
-const StackLayout: FC<Props & BlockClass> = ({ children, blockClass, zIndexOffset = 0 }) => {
+const StackLayout: StorefrontFunctionComponent<Props & BlockClass> = ({ children, blockClass, zIndexOffset = 0 }) => {
   return (
     <div className={`${generateBlockClass(styles.stackContainer, blockClass)} relative flex flex-grow-1 items-stretch`}>
       <Fragment>
@@ -36,6 +37,22 @@ const StackLayout: FC<Props & BlockClass> = ({ children, blockClass, zIndexOffse
       </Fragment>
     </div>
   )
+}
+
+const messages = defineMessages({
+  title: {
+    defaultMessage: '',
+    id: 'admin/editor.stack-layout.title',
+  },
+  description: {
+    defaultMessage: '',
+    id: 'admin/editor.stack-layout.description',
+  },
+})
+
+StackLayout.schema = {
+  title: messages.title.id,
+  description: messages.description.id,
 }
 
 export default StackLayout
