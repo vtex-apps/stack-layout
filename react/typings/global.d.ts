@@ -16,14 +16,4 @@ declare global {
     schema?: object
     getSchema?(props: P): object
   }
-
-  interface Gap {
-    colGap: TachyonsScaleInput
-    rowGap: TachyonsScaleInput
-  }
-
-  interface Flex {
-    stretchContent: boolean
-    grow: boolean
-  }
 }
