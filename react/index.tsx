@@ -28,7 +28,7 @@ const StackLayout: StorefrontFunctionComponent<Props> = ({ children, zIndexOffse
         return (
           <div
             key={idx}
-            className={`${handles.stackItem} absolute top-0 left-0 w-100 h-100 flex-column`}
+            className={`${handles.stackItem} absolute top-0 left-0 w-100 h-100 flex-column flex w-auto`}
             style={{ zIndex: zIndexOffset + idx + 1 }}
           >
             {child}
