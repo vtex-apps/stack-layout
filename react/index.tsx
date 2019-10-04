@@ -1,40 +1,40 @@
-import React, { Fragment } from 'react'
-import { generateBlockClass, BlockClass } from '@vtex/css-handles'
+import React from 'react'
 import { defineMessages } from 'react-intl'
-import styles from './styles.css'
+import { useCssHandles, applyModifiers } from 'vtex.css-handles'
+
+const CSS_HANDLES = ['stackContainer', 'stackItem'] as const
 
 interface Props {
   zIndexOffset?: number
 }
 
-const StackLayout: StorefrontFunctionComponent<Props & BlockClass> = ({ children, blockClass, zIndexOffset = 0 }) => {
+const StackLayout: StorefrontFunctionComponent<Props> = ({ children, zIndexOffset = 0 }) => {
+  const handles = useCssHandles(CSS_HANDLES)
   return (
-    <div className={`${generateBlockClass(styles.stackContainer, blockClass)} relative flex flex-grow-1 items-stretch`}>
-      <Fragment>
-        {React.Children.toArray(children).map((child, idx) => {
-          if (idx === 0) {
-            return (
-              <div
-                key={idx}
-                className={`${styles.stackItem} ${styles.stackItem}--first flex flex-grow-1 flex-column items-stretch`}
-                style={{ zIndex: zIndexOffset + 1 }}
-              >
-                {child}
-              </div>
-            )
-          }
-
+    <div className={`${handles.stackContainer} relative flex flex-grow-1 items-stretch`}>
+      {React.Children.toArray(children).map((child, idx) => {
+        if (idx === 0) {
           return (
             <div
               key={idx}
-              className={`${styles.stackItem} absolute top-0 left-0 w-100 h-100 flex-column`}
-              style={{ zIndex: zIndexOffset + idx + 1 }}
+              className={`${applyModifiers(handles.stackItem, 'first')} flex flex-grow-1 flex-column items-stretch`}
+              style={{ zIndex: zIndexOffset + 1 }}
             >
               {child}
             </div>
           )
-        })}
-      </Fragment>
+        }
+
+        return (
+          <div
+            key={idx}
+            className={`${handles.stackItem} absolute top-0 left-0 w-100 h-100 flex-column`}
+            style={{ zIndex: zIndexOffset + idx + 1 }}
+          >
+            {child}
+          </div>
+        )
+      })}
     </div>
   )
 }
