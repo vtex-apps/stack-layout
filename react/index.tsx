@@ -11,13 +11,13 @@ interface Props {
 const StackLayout: StorefrontFunctionComponent<Props> = ({ children, zIndexOffset = 0 }) => {
   const handles = useCssHandles(CSS_HANDLES)
   return (
-    <div className={`${handles.stackContainer} relative flex flex-grow-1 items-stretch`}>
+    <div className={`${handles.stackContainer} relative`}>
       {React.Children.toArray(children).map((child, idx) => {
         if (idx === 0) {
           return (
             <div
               key={idx}
-              className={`${applyModifiers(handles.stackItem, 'first')} flex flex-grow-1 flex-column items-stretch`}
+              className={applyModifiers(handles.stackItem, 'first')}
               style={{ zIndex: zIndexOffset + 1 }}
             >
               {child}
@@ -28,7 +28,7 @@ const StackLayout: StorefrontFunctionComponent<Props> = ({ children, zIndexOffse
         return (
           <div
             key={idx}
-            className={`${handles.stackItem} absolute top-0 left-0 w-100 h-100 flex-column flex w-auto`}
+            className={`${handles.stackItem} absolute top-0 left-0 w-auto h-auto`}
             style={{ zIndex: zIndexOffset + idx + 1 }}
           >
             {child}
