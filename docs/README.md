@@ -15,7 +15,7 @@ This means `flex-layout.row#viewone` will appear on the bottom, `flex-layout.row
 
 ### Blocks API
 
-`stack-layout` accepts any block as its children, as long as that block is allowed as children of `stach-layout`'s parent.
+`stack-layout` accepts any block as its children, as long as that block is allowed as children of `stack-layout`'s parent.
 
 These are the props accepted by the block:
 
