@@ -8,16 +8,27 @@ interface Props {
   zIndexOffset?: number
 }
 
-const StackLayout: StorefrontFunctionComponent<Props> = ({ children, zIndexOffset = 0 }) => {
+const StackLayout: StorefrontFunctionComponent<Props> = ({
+  children,
+  zIndexOffset = 0,
+}) => {
   const handles = useCssHandles(CSS_HANDLES)
   return (
     <div className={`${handles.stackContainer} relative`}>
       {React.Children.toArray(children).map((child, idx) => {
+
+        // This allows the user customize the stackItem via CSS, via the blockClass of each child
+        const childBlockClass = (child as any)?.props?.blockProps?.blockClass || ''
+        let stackItemBlockClass = ''
+        if (childBlockClass) {
+          stackItemBlockClass = applyModifiers(handles.stackItem, childBlockClass)
+        }
+
         if (idx === 0) {
           return (
             <div
               key={idx}
-              className={applyModifiers(handles.stackItem, 'first')}
+              className={`${applyModifiers(handles.stackItem, 'first')} ${stackItemBlockClass}`}
               style={{ zIndex: zIndexOffset + 1 }}
             >
               {child}
@@ -28,7 +39,7 @@ const StackLayout: StorefrontFunctionComponent<Props> = ({ children, zIndexOffse
         return (
           <div
             key={idx}
-            className={`${handles.stackItem} absolute top-0 left-0 w-auto h-auto`}
+            className={`${handles.stackItem} absolute top-0 left-0 w-auto h-auto ${stackItemBlockClass}`}
             style={{ zIndex: zIndexOffset + idx + 1 }}
           >
             {child}

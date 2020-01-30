@@ -6,7 +6,7 @@ Use this layout component to show blocks on top of other blocks.
 
 Each children passed to `stack-layout` will receive an increasingly higher value of `zIndex`.
 
-This means `flex-layout.row#viewone` will appear on the bottom, `flex-layout.row#viewtwo` will appear over it with `zIndex` of value 2, and `flex-layout.row#viewthree` will appear over them both with `zIndex` of value 3.
+This means `flex-layout.row#viewone` will appear on the bottom, `flex-layout.row#viewtwo` will appear over it with `zIndex` of value 2, and `flex-layout.row#viewthree` will appear over them both with `zIndex` of value 3. Another thing to notice is that you pass the `blockClass` prop to any children of the `stack-layout` it will apply the `blockClass` to the element that wraps child element.
 
 ## Configuration
 
