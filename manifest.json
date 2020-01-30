@@ -1,7 +1,7 @@
 {
   "vendor": "vtex",
   "name": "stack-layout",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "title": "VTEX stack layout component",
   "defaultLocale": "pt-BR",
   "description": "VTEX stack layout component",
