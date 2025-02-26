@@ -5,18 +5,16 @@ import { useCssHandles, applyModifiers } from 'vtex.css-handles'
 const CSS_HANDLES = ['stackContainer', 'stackItem'] as const
 
 interface Props {
-  zIndexOffset?: number,
-  arialabel?: string
+  zIndexOffset?: number
 }
 
 const StackLayout: StorefrontFunctionComponent<Props> = ({
   children,
-  zIndexOffset = 0,
-  arialabel
+  zIndexOffset = 0
 }) => {
   const handles = useCssHandles(CSS_HANDLES)
   return (
-    <div className={`${handles.stackContainer} relative`} aria-label={arialabel}>
+    <div className={`${handles.stackContainer} relative`} aria-label="floating section">
       {React.Children.toArray(children).map((child, idx) => {
 
         // This allows the user customize the stackItem via CSS, via the blockClass of each child
