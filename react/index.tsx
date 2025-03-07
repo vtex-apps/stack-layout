@@ -1,7 +1,6 @@
 import React from 'react'
-import { defineMessages } from 'react-intl'
+import { defineMessages, useIntl } from 'react-intl'
 import { useCssHandles, applyModifiers } from 'vtex.css-handles'
-
 const CSS_HANDLES = ['stackContainer', 'stackItem'] as const
 
 interface Props {
@@ -13,8 +12,10 @@ const StackLayout: StorefrontFunctionComponent<Props> = ({
   zIndexOffset = 0
 }) => {
   const handles = useCssHandles(CSS_HANDLES)
+  const intl = useIntl()
   return (
-    <div className={`${handles.stackContainer} relative`} aria-label="floating section">
+    <div className={`${handles.stackContainer} relative`} aria-label={intl.formatMessage(
+      { id: 'store/stack-layout.aria-label' })}>
       {React.Children.toArray(children).map((child, idx) => {
 
         // This allows the user customize the stackItem via CSS, via the blockClass of each child
