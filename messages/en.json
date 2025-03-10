@@ -1,4 +1,5 @@
 {
   "admin/editor.stack-layout.title": "Stack Layout",
-  "admin/editor.stack-layout.description": "Component used to put blocks over each other"
+  "admin/editor.stack-layout.description": "Component used to put blocks over each other",
+  "store/stack-layout.aria-label": "Floating section"
 }

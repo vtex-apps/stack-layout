@@ -1,4 +1,5 @@
 {
   "admin/editor.stack-layout.title": "Pilha",
-  "admin/editor.stack-layout.description": "Componente usado para colocar blocos um sobre os outros"
+  "admin/editor.stack-layout.description": "Componente usado para colocar blocos um sobre os outros",
+  "store/stack-layout.aria-label": "Seção flutuante"
 }
