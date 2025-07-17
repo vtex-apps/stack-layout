@@ -16,7 +16,7 @@ const StackLayout: StorefrontFunctionComponent<Props> = ({
   const handles = useCssHandles(CSS_HANDLES)
   const intl = useIntl()
   return (
-    <div className={`${handles.stackContainer} relative`} aria-label={arialabel? arialabel: intl.formatMessage(
+    <div className={`${handles.stackContainer} relative`} aria-label={arialabel ? arialabel : intl.formatMessage(
       { id: 'store/stack-layout.aria-label' })}>
       {React.Children.toArray(children).map((child, idx) => {
 
