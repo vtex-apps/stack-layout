@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
  ## [Unreleased]
 
+ + ### Fixed
++ - option for client to pass aria-label as a variable
+
 + ### Added
 + - aria-label property for stack layout
 
