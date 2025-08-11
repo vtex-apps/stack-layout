@@ -4,17 +4,19 @@ import { useCssHandles, applyModifiers } from 'vtex.css-handles'
 const CSS_HANDLES = ['stackContainer', 'stackItem'] as const
 
 interface Props {
-  zIndexOffset?: number
+  zIndexOffset?: number,
+  arialabel?: string
 }
 
 const StackLayout: StorefrontFunctionComponent<Props> = ({
   children,
-  zIndexOffset = 0
+  zIndexOffset = 0,
+  arialabel
 }) => {
   const handles = useCssHandles(CSS_HANDLES)
   const intl = useIntl()
   return (
-    <div className={`${handles.stackContainer} relative`} aria-label={intl.formatMessage(
+    <div className={`${handles.stackContainer} relative`} aria-label={arialabel ? arialabel : intl.formatMessage(
       { id: 'store/stack-layout.aria-label' })}>
       {React.Children.toArray(children).map((child, idx) => {
 
