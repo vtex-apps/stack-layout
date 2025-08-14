@@ -1,0 +1,20 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: stack-layout
+  description: Layout component to show blocks on top of other blocks
+  tags:
+    - typescript
+  annotations:
+    vtex.com/janus-acronym: ""
+    vtex.com/o11y-os-index: ""
+    grafana/dashboard-selector: ""
+    github.com/project-slug: vtex-apps/stack-layout
+    vtex.com/platform-flow-id: ""
+    backstage.io/techdocs-ref: dir:../
+    vtex.com/application-id: Y859UYCZ
+spec:
+  lifecycle: stable
+  owner: te-0013
+  type: frontend-ui
+  dependsOn: []
