@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Fixed
-- Add `role="region"` to stack layout div with aria-label to comply with WCAG 2.2 Level A (4.1.2) and ARIA 1.2 specification
+- Add `role="group"` to stack layout div with aria-label to comply with WCAG 2.2 Level A (4.1.2) and ARIA 1.2 specification without introducing landmark navigation noise
 
 ## [0.1.3] - 2025-08-11
   + ### Fixed
