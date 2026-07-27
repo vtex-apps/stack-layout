@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Fixed
+- Add `role="group"` to stack layout div with aria-label to comply with WCAG 2.2 Level A (4.1.2) and ARIA 1.2 specification without introducing landmark navigation noise
 
 ## [0.1.3] - 2025-08-11
   + ### Fixed
